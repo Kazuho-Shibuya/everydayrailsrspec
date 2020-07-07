@@ -7,6 +7,13 @@ describe User do
   it 'has a valid factory' do
     expect(FactoryBot.build(:user)).to be_valid
   end
+
+  # 複数のユーザーで何かする
+  it 'does something with multiple users' do
+    user1 = FactoryBot.create(:user)
+    user2 = FactoryBot.create(:user)
+    expect(true).to be_truthy
+  end
 end
 
 RSpec.describe User, type: :model do
