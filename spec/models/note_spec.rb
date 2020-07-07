@@ -10,10 +10,16 @@ RSpec.describe Note, type: :model do
       email: 'joetester@example.com',
       password: 'dottle-nouveau-pavilion-tights-furze'
     )
-
     @project = @user.projects.create!(
       name: 'Test Project'
     )
+  end
+
+  # ファクトリで関連するデータを生成する
+  it 'generates associated data from a factory' do
+    note = FactoryBot.create(:note)
+    puts "This note's project is #{note.project.inspect}"
+    puts "This note's user is #{note.user.inspect}"
   end
 
   # ユーザー、プロジェクト、メッセージがあれば有効な状態であること
