@@ -20,7 +20,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6.0'
   gem 'factory_bot_rails', '~> 4.10.0'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
 end
 
@@ -34,7 +33,9 @@ group :development do
 end
 
 group :test do
+  gem 'capybara', '~> 2.15.2'
   gem 'launchy', '~> 2.4.3'
+  gem 'webdrivers'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
