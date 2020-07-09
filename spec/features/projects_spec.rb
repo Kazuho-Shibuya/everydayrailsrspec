@@ -22,4 +22,16 @@ RSpec.feature 'Projects', type: :feature do
       expect(page).to have_content "Owner: #{user.name}"
     end.to change(user.projects, :count).by(1)
   end
+
+  # ゲストがプロジェクトを追加する
+  scenario 'guest adds a project' do
+    user = FactoryBot.create(:user)
+    visit root_path
+    click_link 'Sign in'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+    visit projects_path
+    click_link 'New Project'
+  end
 end

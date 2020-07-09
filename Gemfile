@@ -33,6 +33,10 @@ group :development do
   gem 'spring-commands-rspec'
 end
 
+group :test do
+  gem 'launchy', '~> 2.4.3'
+end
+
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bootstrap-sass'
