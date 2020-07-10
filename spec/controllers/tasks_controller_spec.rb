@@ -22,7 +22,7 @@ RSpec.describe TasksController, type: :controller do
       sign_in user
       post :create, format: :json,
                     params: { project_id: project.id, task: new_task }
-      expect(response).to have_content_type :html
+      expect(response).to have_content_type :json
     end
 
     # 新しいタスクをプロジェクトに追加すること
