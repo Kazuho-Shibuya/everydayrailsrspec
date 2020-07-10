@@ -35,6 +35,9 @@ group :test do
   gem 'capybara'
   gem 'launchy', '~> 2.4.3'
   gem 'webdrivers'
+  gem 'shoulda-matchers',
+      git: 'https://github.com/thoughtbot/shoulda-matchers.git',
+      branch: 'rails-5'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
