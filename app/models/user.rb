@@ -22,7 +22,7 @@ class User < ApplicationRecord
   geocoded_by :last_sign_in_ip do |user, result|
     if !user.local? && geocode = result.first
       user.location = "#{geocode.city}, #{geocode.state}, #{geocode.country}"
-      user.save
+      user.save!
     end
   end
 
